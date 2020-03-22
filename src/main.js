@@ -13,6 +13,7 @@ const router = new VueRouter({
   mode: 'history'
 });
 
+Vue.filter('capitalize', val => val.charAt(0).toUpperCase() + val.substr(1, val.length));
 new Vue({
   render: h => h(App),
   store,

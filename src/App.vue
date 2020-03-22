@@ -3,8 +3,9 @@
     <nav-header></nav-header>
     <div class="container">
       <div class="row justify-content-center">
-          <router-view></router-view>
-
+        <transition name="fade" mode="out-in">
+            <router-view></router-view>
+          </transition>
       </div>
     </div>
   </div>
@@ -18,10 +19,22 @@ export default {
   name: "App",
   components: {
     NavHeader
-  },
+  }
 };
 </script>
 
 <style lang="scss">
+  .fade-enter {
+    opacity: 0
+  }
+
+  .fade-enter-active {
+    transition: opacity .1s;
+  }
+
+  .fade-leave-active {
+    transition: opacity .1s;
+    opacity: 0;
+  }
 
 </style>
