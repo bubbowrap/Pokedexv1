@@ -24,6 +24,14 @@ export default {
 </script>
 
 <style lang="scss">
+  h1, .card-text, .modal-title {
+    font-family: 'Press Start 2P', serif;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
   .fade-enter {
     opacity: 0
   }

@@ -33,8 +33,17 @@
 </template>
 
 <script>
+
 export default {
-    props: ['pokemon', 'pokeID', 'image_src']
+    data() {
+        return {
+            image_src: ''
+        }
+    },
+    props: ['pokemon', 'pokeID', 'id'],
+    mounted() {
+        this.image_src = `https://pokeres.bastionbot.org/images/pokemon/${this.id}.png`;
+    }
 }
 </script>
 

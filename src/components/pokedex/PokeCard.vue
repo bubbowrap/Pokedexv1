@@ -1,5 +1,5 @@
 <template>
-    <div class="col-xl-2 col-lg-3 col-sm-4 mb-4">
+    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 col-xs-1q2 mb-4">
         <div class="card text-center" data-toggle="modal" :data-target="'#' + pokemon.name"  :data-pokemodal="pokemon.name">
             <img class="card-img-top" :src="image_src" :alt="pokemon.name">
             <div class="card-body">
@@ -7,7 +7,7 @@
                 <p class="card-text">{{pokeID}}</p>
             </div>
         </div>
-        <poke-modal :pokemon="pokemon" :pokeID="pokeID" :image_src="image_src_hi"></poke-modal>
+        <poke-modal :pokemon="pokemon" :pokeID="pokeID" :id="id"></poke-modal>
     </div>
 </template>
 
@@ -41,7 +41,6 @@ export default {
                 this.pokemon = res.data;
                 this.pokemon.name = this.pokemon.name.charAt(0).toUpperCase() + this.pokemon.name.substr(1, this.pokemon.name.length);
                 this.image_src = res.data.sprites.front_default;
-                this.image_src_hi = `https://pokeres.bastionbot.org/images/pokemon/${this.pokemon.id}.png`;
             })
             .catch(err => console.log(err));
     }
@@ -58,12 +57,22 @@ export default {
     }
     .card-img-top {
         width: auto;
-        padding: 1rem;
+        padding: 1rem 1rem 0;
+    }
+    .card-title {
+        margin-bottom: 0.25rem;
+    }
+    .card-text {
+        color: #dc3545;
     }
     .card {
         cursor: pointer;
+        transition: all .15s ease;
         &:hover {
             background: #efefef;
         }
+    }
+    .card-body {
+        padding-top: 0;
     }
 </style>

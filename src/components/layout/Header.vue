@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbark-dark bg-danger justify-content-center">
-      <router-link to="/" class="navbar-brand">Pokedex</router-link>
+      <router-link to="/" class="navbar-brand"><img src="../../assets/pokedex-logo.png" /></router-link>
   </nav>
 </template>
 
@@ -12,9 +12,10 @@ export default {
 
 <style lang="scss">
   .navbar-brand {
-    color: white;
+    max-width: 10rem;
+    transition: transform .15s ease 0s;
       &:hover {
-        color: white;
+        transform: scale(1.05);
       }
   }
 </style>

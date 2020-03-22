@@ -28,8 +28,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     .list-group-item {
         cursor: pointer;
+
+        &:hover {
+            color: white;
+            background: #dc3545;
+        }
     }
 </style>
