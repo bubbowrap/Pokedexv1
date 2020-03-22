@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import axios from 'axios';
+// import axios from 'axios';
 
 Vue.use(Vuex);
 
@@ -13,22 +13,22 @@ export const store = new Vuex.Store({
             {id: 4, name: 'Sinnoh', offset: 386, max: 107},
             {id: 5, name: 'Unova', offset: 493, max: 156},
         ],
-        pokeApi: null
-    },
-    mutations: {
-        getApi(state, gen) {
-            const ENDPOINT = 'https://pokeapi.co/api/v2';
-            axios.get(`${ENDPOINT}/pokemon?offset=${gen.offset}&limit=${gen.max}`)
-                .then(res => {
-                    state.pokeApi = res.data.results;
-                })
-                .catch(err => console.log(err));
-        }
-    },
-    actions: {
-        getApi: ({commit}, gen) => {
-            commit('getApi', gen);
-        }
+    //     pokeApi: null
+    // },
+    // mutations: {
+    //     getApi(state, gen) {
+    //         const ENDPOINT = 'https://pokeapi.co/api/v2';
+    //         axios.get(`${ENDPOINT}/pokemon?offset=${gen.offset}&limit=${gen.max}`)
+    //             .then(res => {
+    //                 state.pokeApi = res.data.results;
+    //             })
+    //             .catch(err => console.log(err));
+    //     }
+    // },
+    // actions: {
+    //     getApi: ({commit}, gen) => {
+    //         commit('getApi', gen);
+    //     }
         
     }
 
