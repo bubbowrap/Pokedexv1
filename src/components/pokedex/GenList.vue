@@ -28,7 +28,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .list-group-item {
         cursor: pointer;
     }

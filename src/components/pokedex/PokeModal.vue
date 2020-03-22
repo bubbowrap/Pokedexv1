@@ -10,11 +10,11 @@
                 </div>
                 <div class="modal-body">
                     <div class="row align-items-center">
-                        <div class="col-md-4">                    
+                        <div class="col-12 text-center mb-2">                    
                             <img class="card-img" :src="image_src" alt="Card image cap">
                         </div>
-                        <div class="col-md-8">
-                            <ul class="list-group">
+                        <div class="col-12">
+                            <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><strong>Type: </strong><template v-for="(type, index) in pokemon.types"><span :key="index">{{type.type.name}}<span v-if="index < pokemon.types.length - 1">, </span></span></template></li>
                                 <li class="list-group-item"><strong>Height: </strong> {{pokemon.height}} decimetres</li>
                                 <li class="list-group-item"><strong>Weight: </strong> {{pokemon.weight}} hectograms</li>
@@ -39,7 +39,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    img {
+    .card-img {
+        max-width: 50%;
     }
     .modal-title {
         width: 100%;
