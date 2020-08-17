@@ -4,7 +4,11 @@
             <h1>{{$store.state.generations[this.$route.params.id - 1].name}} Region Pokemon</h1>
         </div>
         <div class="row">
-            <poke-card v-for="(pokemon, index) in genLimit" :key="index" :id="genOffset + index + 1"></poke-card>
+            <poke-card 
+                v-for="(pokemon, index) in genLimit" 
+                :key="index" :id="genOffset + index + 1"
+            >
+            </poke-card>
     </div>
   </div>
 </template>

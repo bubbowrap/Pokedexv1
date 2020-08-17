@@ -1,13 +1,24 @@
 <template>
     <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 col-xs-1q2 mb-4">
-        <div class="card text-center" data-toggle="modal" :data-target="'#' + pokemon.name"  :data-pokemodal="pokemon.name">
-            <img class="card-img-top" :src="image_src" :alt="pokemon.name">
+        <div class="card text-center" 
+            data-toggle="modal" 
+            :data-target="'#' + pokemon.name"  
+            :data-pokemodal="pokemon.name"
+        >
+            <img class="card-img-top" 
+                :src="image_src" 
+                :alt="pokemon.name"
+            />
             <div class="card-body">
                 <h5 class="card-title">{{pokemon.name}}</h5>
                 <p class="card-text">{{pokeID}}</p>
             </div>
         </div>
-        <poke-modal :pokemon="pokemon" :pokeID="pokeID" :id="id"></poke-modal>
+        <poke-modal 
+            :pokemon="pokemon" 
+            :pokeID="pokeID" 
+            :id="id">
+        </poke-modal>
     </div>
 </template>
 
@@ -42,7 +53,7 @@ export default {
                 this.pokemon.name = this.pokemon.name.charAt(0).toUpperCase() + this.pokemon.name.substr(1, this.pokemon.name.length);
                 this.image_src = res.data.sprites.front_default;
             })
-            .catch(err => console.log(err));
+            .catch(err => err);
     }
 
     
