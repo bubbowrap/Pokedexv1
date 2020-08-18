@@ -17,16 +17,10 @@
 <script>
 
 export default {
-    data() {
-        return {
-            
-        }
-    },
     methods: {
         goToPage(id) {
             this.$router.push(`/generation/${id}`);
-        },
-
+        }
     }
 }
 </script>

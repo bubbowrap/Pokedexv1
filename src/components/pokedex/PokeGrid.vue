@@ -23,7 +23,7 @@ export default {
             genLimit: this.$store.state.generations[this.$route.params.id - 1].max,
         }
     },
-    props: ["generationName"],
+
     components: {
         PokeCard
     },
@@ -32,7 +32,3 @@ export default {
     // }
 }
 </script>
-
-<style>
-
-</style>

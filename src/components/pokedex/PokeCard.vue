@@ -36,15 +36,24 @@ export default {
             show: true
         }
     },
+
     components: {
         PokeModal
     },
-    props: ['id'],
+
+    props: {
+        id: {
+            type: Number,
+            default: null
+        }
+    },
+
     computed: {
         pokeID() {
             return this.id.toString().length === 1 ? `#00${this.id}` : this.id.toString().length === 2 ? `#0${this.id}` : `#${this.id}`;
         }
     },
+
     created() {
         const ENDPOINT = 'https://pokeapi.co/api/v2';
         axios.get(`${ENDPOINT}/pokemon/${this.id}`)
@@ -55,8 +64,6 @@ export default {
             })
             .catch(err => err);
     }
-
-    
 }
 </script>
 
@@ -66,23 +73,29 @@ export default {
         margin: 0 auto;
         width: fit-content;
     }
+
     .card-img-top {
         width: auto;
         padding: 1rem 1rem 0;
     }
+    
     .card-title {
         margin-bottom: 0.25rem;
     }
+
     .card-text {
         color: #dc3545;
     }
+
     .card {
         cursor: pointer;
         transition: all .15s ease;
+
         &:hover {
             background: #efefef;
         }
     }
+    
     .card-body {
         padding-top: 0;
     }

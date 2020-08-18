@@ -8,7 +8,7 @@
         aria-hidden="true" 
         :data-pokemodal="pokemon.name"
     >
-    
+
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -91,7 +91,22 @@ export default {
             image_src: ''
         }
     },
-    props: ['pokemon', 'pokeID', 'id'],
+
+    props: {
+        pokemon: {
+            type: String,
+            default: ''
+        },
+        pokeID: {
+            type: Number,
+            default: null
+        },
+        id: {
+            type: Number,
+            default: null
+        }
+    },
+
     mounted() {
         this.image_src = `https://pokeres.bastionbot.org/images/pokemon/${this.id}.png`;
     }
@@ -102,6 +117,7 @@ export default {
     .card-img {
         max-width: 50%;
     }
+    
     .modal-title {
         width: 100%;
     }
