@@ -1,12 +1,12 @@
 <template>
     <div class="container mt-5">
         <div class="row justify-content-center mb-4">
-            <h1>{{$store.state.generations[this.$route.params.id - 1].name}} Region Pokemon</h1>
+            <h1>{{ generation.name }} Region Pokemon</h1>
         </div>
         <div class="row">
             <poke-card 
-                v-for="(pokemon, index) in genLimit" 
-                :key="index" :id="genOffset + index + 1"
+                v-for="(pokemon, index) in generation.max" 
+                :key="index" :id="generation.offset + index + 1"
             >
             </poke-card>
     </div>
@@ -14,19 +14,22 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import PokeCard from './PokeCard';
 
 export default {
-    data() {
-        return {
-            genOffset: this.$store.state.generations[this.$route.params.id - 1].offset,
-            genLimit: this.$store.state.generations[this.$route.params.id - 1].max,
+    computed: {
+        ...mapState(['generations']),
+
+        generation() {
+            return this.generations[this.$route.params.id - 1];
         }
     },
 
     components: {
         PokeCard
     },
+    
     // created() {
     //     this.$store.dispatch('getApi', {gen: this.$route.params.id, offset: this.genOffset, max: this.genLimit});
     // }

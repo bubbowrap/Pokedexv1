@@ -12,7 +12,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title text-center" id="exampleModalLabel">{{pokemon.name}}</h3>
+                    <h3 class="modal-title text-center" id="exampleModalLabel">{{ pokemon.name }}</h3>
                     <button
                         type="button"
                         class="close"
@@ -39,7 +39,7 @@
                                 <li class="list-group-item">
                                     <strong>Type: </strong>
                                     <template v-for="(type, index) in pokemon.types">
-                                        <span :key="index">{{type.type.name}}
+                                        <span :key="index">{{ type.type.name }}
                                             <span v-if="index < pokemon.types.length - 1">, </span>
                                         </span>
                                     </template>
@@ -47,18 +47,18 @@
 
                                 <li class="list-group-item">
                                     <strong>Height: </strong> 
-                                        {{pokemon.height}} decimetres
+                                        {{ pokemon.height }} decimetres
                                 </li>
 
                                 <li class="list-group-item">
                                     <strong>Weight: </strong> 
-                                        {{pokemon.weight}} hectograms
+                                        {{ pokemon.weight }} hectograms
                                 </li>
 
                                 <li class="list-group-item">
                                     <strong>Top Moves: </strong>
                                     <template v-for="(move, index) in pokemon.moves">
-                                        <span v-if="index < 10" :key="index">{{move.move.name}}
+                                        <span v-if="index < 10" :key="index">{{ move.move.name }}
                                             <span v-if="index < 9">, </span>
                                         </span>
                                     </template>
@@ -117,7 +117,7 @@ export default {
     .card-img {
         max-width: 50%;
     }
-    
+
     .modal-title {
         width: 100%;
     }

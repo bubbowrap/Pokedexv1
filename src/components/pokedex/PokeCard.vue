@@ -10,8 +10,8 @@
                 :alt="pokemon.name"
             />
             <div class="card-body">
-                <h5 class="card-title">{{pokemon.name}}</h5>
-                <p class="card-text">{{pokeID}}</p>
+                <h5 class="card-title">{{ pokemon.name }}</h5>
+                <p class="card-text">{{ pokeID }}</p>
             </div>
         </div>
         <poke-modal 
@@ -31,9 +31,7 @@ export default {
     data() {
         return {
             pokemon: '',
-            image_src: '',
-            image_src_hi: '',
-            show: true
+            image_src: ''
         }
     },
 
@@ -95,7 +93,7 @@ export default {
             background: #efefef;
         }
     }
-    
+
     .card-body {
         padding-top: 0;
     }
