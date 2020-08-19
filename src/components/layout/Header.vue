@@ -4,16 +4,11 @@
   </nav>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style lang="scss">
   .navbar-brand {
     max-width: 10rem;
     transition: transform .15s ease 0s;
+    
       &:hover {
         transform: scale(1.05);
       }

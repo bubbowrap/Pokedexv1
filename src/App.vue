@@ -30,6 +30,7 @@ export default {
 
   h1 {
     font-size: 1.75rem;
+    text-align: center;
   }
 
   .fade-enter {
