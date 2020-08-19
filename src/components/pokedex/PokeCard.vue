@@ -65,7 +65,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     img {
         max-width: 100%;
         margin: 0 auto;

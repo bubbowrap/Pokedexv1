@@ -28,10 +28,6 @@ export default {
 
     components: {
         PokeCard
-    },
-    
-    // created() {
-    //     this.$store.dispatch('getApi', {gen: this.$route.params.id, offset: this.genOffset, max: this.genLimit});
-    // }
+    }
 }
 </script>

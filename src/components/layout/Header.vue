@@ -4,7 +4,7 @@
   </nav>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .navbar-brand {
     max-width: 10rem;
     transition: transform .15s ease 0s;

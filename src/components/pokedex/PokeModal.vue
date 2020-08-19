@@ -92,20 +92,7 @@ export default {
         }
     },
 
-    props: {
-        pokemon: {
-            type: String,
-            default: ''
-        },
-        pokeID: {
-            type: Number,
-            default: null
-        },
-        id: {
-            type: Number,
-            default: null
-        }
-    },
+    props: ['pokemon', 'pokeID', 'id'],
 
     mounted() {
         this.image_src = `https://pokeres.bastionbot.org/images/pokemon/${this.id}.png`;
